@@ -3,49 +3,55 @@ package net.pirrisdev.movinfo.ui.view.Main
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import net.pirrisdev.movinfo.ui.view.Main.ui.theme.MovinfoTheme
+import androidx.compose.ui.unit.sp
+import net.pirrisdev.movinfo.R
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MovinfoTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+            App()
         }
     }
 }
 
+@Preview
 @Composable
-fun Greeting(name: String) {
-    Text(
-        text = "Q izo $name!",
+fun App() {
+    Column(
         modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp)
-            .alpha(0.5f)
-    )
-}
+            .fillMaxSize()
+            .background(
+                Color.Magenta
+            ),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.app_icon),
+            contentDescription = "Logo App",
+            modifier = Modifier.width(320.dp).height(320.dp)
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MovinfoTheme {
-        Greeting("Antonio")
+        )
+        Text(
+            text = "Jhon Diaz",
+            fontSize = 32.sp,
+            color = Color.White,
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Center
+        )
+        Text(text = "Learning")
+        Text(text = "HI!")
     }
 }
