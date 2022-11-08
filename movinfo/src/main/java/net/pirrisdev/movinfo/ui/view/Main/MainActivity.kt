@@ -34,7 +34,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Q izo $name!", modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp).alpha(0.5f))
+    Text(
+        text = "Q izo $name!",
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .alpha(0.5f)
+    )
 }
 
 @Preview(showBackground = true)
