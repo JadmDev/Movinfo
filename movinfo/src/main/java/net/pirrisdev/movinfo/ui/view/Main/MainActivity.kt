@@ -35,8 +35,7 @@ class MainActivity : ComponentActivity() {
 @Preview(
     showBackground = true,
     showSystemUi = true,
-    device = Devices.PIXEL_4,
-    uiMode = UI_MODE_NIGHT_NO
+    device = Devices.PIXEL_2_XL
 )
 @Composable
 fun Content() {
