@@ -1,6 +1,5 @@
 package net.pirrisdev.movinfo.ui.view.Main
 
-import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -27,21 +26,18 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Content()
+            View()
         }
     }
 }
 
 @Preview(
     showBackground = true,
-    showSystemUi = true,
     device = Devices.PIXEL_2_XL
 )
 @Composable
-fun Content() {
+fun View() {
     Column(modifier = Modifier.fillMaxSize()) {
-        MovieItem()
-        MovieItem()
         MovieItem()
     }
 }
